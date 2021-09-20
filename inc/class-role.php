@@ -103,6 +103,15 @@ class Role {
 	 */
 	public $denied_caps = array();
 
+  /**
+   * Flag indicating if the admin bar should be hidden for this role.
+   *
+   * @since  2.1.0
+   * @access public
+   * @var    array
+   */
+  public $hide_admin_bar = false;
+
 	/**
 	 * Return the role string in attempts to use the object as a string.
 	 *

@@ -413,4 +413,23 @@ jQuery( document ).ready( function() {
 		}
 	); // .click()
 
+  jQuery('#hide-admin-bar').on("click", function (e) {
+    // Set up some data to pass to our Underscore template.
+    var data = {
+      cap            : 'members-hide-admin-bar',
+      readonly       : '',
+      hidden         : true,
+      name           : { grant : 'grant-new-caps[]', deny : 'deny-new-caps[]' },
+      is_granted_cap : true,
+      is_denied_cap  : false,
+      label          : { cap : new_cap, grant : members_i18n.label_grant_cap, deny : members_i18n.label_deny_cap }
+    };
+
+    // Prepend our template to the "custom" edit caps tab content.
+    jQuery( '#members-tab-custom tbody' ).prepend( control_template( data ) );
+
+    // Trigger a change on our new grant cap checkbox.
+    jQuery( '.members-cap-checklist input[data-grant-cap="' + new_cap + '"]' ).trigger( 'change' );
+  });
+
 } ); // ready()

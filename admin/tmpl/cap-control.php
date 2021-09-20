@@ -9,8 +9,9 @@
  * @link       https://themehybrid.com/plugins/members
  * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
+ $row_class = $data.hidden ? "members-cap-checklist members-hidden-cap" : "members-cap-checklist";
 ?>
-<tr class="members-cap-checklist">
+<tr class="<? echo $row_class; ?>">
 	<td class="column-cap">
 		<button type="button"><strong>{{ data.label.cap }}</strong></button>
 		<i class="dashicons <?php echo is_rtl() ? 'dashicons-arrow-left' : 'dashicons-arrow-right'; ?>"></i>

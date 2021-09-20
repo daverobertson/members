@@ -237,6 +237,7 @@ final class Members_Plugin {
 			require_once( $this->dir . 'admin/class-role-new.php'              );
 			require_once( $this->dir . 'admin/class-meta-box-publish-role.php' );
 			require_once( $this->dir . 'admin/class-meta-box-custom-cap.php'   );
+      require_once( $this->dir . 'admin/class-meta-box-hide-admin-bar.php'   );
 
 			// Edit capabilities tabs and groups.
 			require_once( $this->dir . 'admin/class-cap-tabs.php'       );
@@ -431,7 +432,7 @@ final class Members_Plugin {
 	public function run_addon_activator( $addon ) {
 
 		if ( file_exists( trailingslashit( __DIR__ ) . "addons/{$addon}/src/Activator.php" ) ) {
-			
+
 			// Require the add-on file
 			include "addons/{$addon}/src/Activator.php";
 
