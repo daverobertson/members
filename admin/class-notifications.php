@@ -228,7 +228,9 @@ class Notifications {
   public function get() {
 
     if ( ! self::has_access() ) {
-      return [];
+      return [
+        'active' => false,
+      ];
     }
 
     $option = $this->get_option();
